@@ -1,3 +1,13 @@
-<p>
-  usuarios works!
-</p>
+<mat-card class="example-card" *ngFor="let usuario of usuarios">
+  <mat-card-content>
+   <h4>
+     {{usuario.name | uppercase}} <br>
+     @{{usuario.username}}</h4>
+    Correo: {{usuario.email}}
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="completados(usuario.id)">Todos Completados</button>
+    <button (click)="noCompletados(usuario.id)">Todos No Completados</button>
+  </mat-card-actions>
+</mat-card>
